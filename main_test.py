@@ -11,31 +11,50 @@ def regex_test(expected, content):
 
 @pytest.mark.T1
 def test_main_1():
-    # Input: 3 -> rows: A / A B / A B C
+    # Input: 3 -> A / A B / A B C
     content = open('result1.txt').read()
     print(content)
-    regex_test([r'(?m)^A$', r'(?m)^A B$', r'(?m)^A B C$'], content)
-
+    regex_test([
+        r'A',
+        r'A', r'B',
+        r'A', r'B', r'C'
+    ], content)
 
 @pytest.mark.T2
 def test_main_2():
-    # Input: 5 -> rows: A / A B / A B C / A B C D / A B C D E
+    # Input: 5 -> A / A B / A B C / A B C D / A B C D E
     content = open('result2.txt').read()
     print(content)
-    regex_test([r'(?m)^A$', r'(?m)^A B C$', r'(?m)^A B C D E$'], content)
-
+    regex_test([
+        r'A',
+        r'A', r'B',
+        r'A', r'B', r'C',
+        r'A', r'B', r'C', r'D',
+        r'A', r'B', r'C', r'D', r'E'
+    ], content)
 
 @pytest.mark.T3
 def test_main_3():
-    # Input: 4 -> rows: A / A B / A B C / A B C D
+    # Input: 4 -> A / A B / A B C / A B C D
     content = open('result3.txt').read()
     print(content)
-    regex_test([r'(?m)^A$', r'(?m)^A B C$', r'(?m)^A B C D$'], content)
-
+    regex_test([
+        r'A',
+        r'A', r'B',
+        r'A', r'B', r'C',
+        r'A', r'B', r'C', r'D'
+    ], content)
 
 @pytest.mark.T4
 def test_main_4():
-    # Input: 6 -> rows: A / A B / ... / A B C D E F
+    # Input: 6 -> A / A B / ... / A B C D E F
     content = open('result4.txt').read()
     print(content)
-    regex_test([r'(?m)^A$', r'(?m)^A B C D$', r'(?m)^A B C D E F$'], content)
+    regex_test([
+        r'A',
+        r'A', r'B',
+        r'A', r'B', r'C',
+        r'A', r'B', r'C', r'D',
+        r'A', r'B', r'C', r'D', r'E',
+        r'A', r'B', r'C', r'D', r'E', r'F'
+    ], content)
