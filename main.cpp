@@ -9,7 +9,7 @@ int main()
 
     char letter;
     // TODO: outer loop for each row
-    for (int i=1; i<=5; i++){
+    for (int i=1; i<=n; i++){
         // TODO: inner loop to print letters for this row
         for (int j=1; j<=i; j++){
             // TODO: print the letter for this column
